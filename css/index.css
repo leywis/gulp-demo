@@ -1,0 +1,20 @@
+.joy-fire{
+    display: inline-block;
+    height:1.28rem;
+    width:1.42rem;
+    background:url(i/fires.png) 0 0 no-repeat;
+    background-size:7.1rem 1.28rem;
+    @include joyFire(fire1,1.42rem);
+  }
+ 
+ @mixin joyFire($name,$width){
+     animation:$name 1s steps(5) infinite;
+     @keyframes #{$name}{
+         0%{
+             background-position: 0 0;
+         }
+         100%{
+             background-position: -($width*5) 0;
+         }
+     }
+ }
